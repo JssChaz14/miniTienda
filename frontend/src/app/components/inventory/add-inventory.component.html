@@ -1,0 +1,20 @@
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">{{title}}</h5>
+
+        <form #forma="ngForm" (ngSubmit)="addInventory()">
+            <label class="my-1 mr-2">Producto</label>
+            <select class="custom-select my-1 mr-sm-2" name="inventory" [(ngModel)]="objInventory.inventory">
+                <option [value]="item._id" *ngFor="let item of products.products">{{item.name}}</option>
+            </select>
+
+            <div class="form-group">
+                <label for="quantity">Cantidad: <small class="requerido">*</small></label>
+                <input type="text" class="form-control" name="quantity" [(ngModel)]="objInventory.quantity" placeholder="Cantidad">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Agregar</button>
+        </form>
+
+    </div>
+</div>

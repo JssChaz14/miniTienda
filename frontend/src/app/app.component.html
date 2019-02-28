@@ -1,0 +1,64 @@
+<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Mini Tienda</a>
+    <input class="form-control form-control-dark w-100" type="text" placeholder="Buscar" aria-label="Search">
+    <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+            <a class="nav-link" href="#">Login</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+            <div class="sidebar-sticky">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fa fa-cubes" aria-hidden="true"></i> Productos
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <a class="nav-link" [routerLink]="['/productos']" routerLinkActive="active">Ver productos</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a class="nav-link" [routerLink]="['/agregar-producto']" routerLinkActive="active">Agregar</a>
+                        </li>
+                    </ul>
+                    <div class="card-header">
+                        <i class="fa fa-usd" aria-hidden="true"></i> Ventas
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <a class="nav-link" [routerLink]="[ '/ventas' ]" routerLinkActive="active"> Ver ventas</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a class="nav-link" [routerLink]="[ '/agregar-ventas' ]" routerLinkActive="active"> Agregar ventas</a>
+                        </li>
+                    </ul>
+                    <div class="card-header">
+                        <i class="fa fa-line-chart" aria-hidden="true"></i> Inventario
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <a class="nav-link" [routerLink]="[ '/inventario' ]" routerLinkActive="active"> Ver Inventario</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a class="nav-link" [routerLink]="[ '/agregar-inventario' ]" routerLinkActive="active"> Agregar Inventario</a>
+                        </li>
+                    </ul>
+                    <div class="card-header">
+
+                        <a [routerLink]="[ '/calcular' ]" routerLinkActive="active"> <i class="fa fa-calculator" aria-hidden="true"></i> Calcular</a>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+
+            <router-outlet></router-outlet>
+
+        </main>
+    </div>
+</div>

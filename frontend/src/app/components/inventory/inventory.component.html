@@ -1,0 +1,36 @@
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">{{title}}</h5>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let edit of inventories">
+                    <th scope="row">{{edit.inventory.name}}</th>
+                    <td>{{edit.quantity}}</td>
+                    <td>
+                        <span (click)="formUpdate(edit._id)"> <i class="fa fa-pencil" aria-hidden="true"></i> | </span>
+                        <span (click)="delete(edit._id)"> <i class="fa fa-trash" aria-hidden="true"></i></span>
+                    </td>
+
+                    <div *ngIf="showForm && edit._id == id">
+                        <!-- <label class="my-1 mr-2">Producto</label> -->
+                        <div class="form-group">
+                            <label for="quantity">Cantidad: <small class="requerido">*</small></label>
+                            <input type="text" class="form-control" name="quantity" [(ngModel)]="edit.quantity" placeholder="Cantidad">
+                        </div>
+                        <button (click)="update(edit)" class="btn btn-warning">Modificar</button>
+                    </div>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+    </div>
+</div>
